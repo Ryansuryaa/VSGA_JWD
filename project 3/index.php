@@ -13,12 +13,12 @@ include "koneksi.php";
     <table border="2">
         <tr>
             <th>No</th>
-            <th>Nama Merek</th>
-            <th>Warna</th>
+            <th>Nama Barang</th>
+            <th>Jenis</th>
             <th>Jumlah</th>
         </tr>
         <?php
-        $query = "select * from printer";
+        $query = "select * from barang";
         $list = mysqli_query($conn, $query);
 
         if (!$list) {
@@ -29,8 +29,8 @@ include "koneksi.php";
         ?>
         <tr>
             <td><?php echo htmlentities($a['no']); ?></td>
-            <td><?php echo htmlentities($a['nama_merk']); ?></td>
-            <td><?php echo htmlentities($a['warna']); ?></td>
+            <td><?php echo htmlentities($a['nama_barang']); ?></td>
+            <td><?php echo htmlentities($a['jenis']); ?></td>
             <td><?php echo htmlentities($a['jumlah']); ?></td>
         </tr>
         <?php }?>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2023 at 08:37 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jul 24, 2023 at 09:23 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,39 +18,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data`
+-- Database: `databarang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `printer`
+-- Table structure for table `barang`
 --
 
-CREATE TABLE `printer` (
-  `no` int(11) NOT NULL,
-  `nama_merk` varchar(20) NOT NULL,
-  `warna` varchar(10) NOT NULL,
+CREATE TABLE `barang` (
+  `no` int(10) NOT NULL,
+  `nama_barang` varchar(30) NOT NULL,
+  `jenis` varchar(20) NOT NULL,
   `jumlah` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `printer`
+-- Dumping data for table `barang`
 --
 
-INSERT INTO `printer` (`no`, `nama_merk`, `warna`, `jumlah`) VALUES
-(1, 'Cannon', 'HITAM', 20),
-(2, 'HP C33XP', 'BIRU', 100),
-(3, 'PIXMA MP237', 'HITAM', 200);
+INSERT INTO `barang` (`no`, `nama_barang`, `jenis`, `jumlah`) VALUES
+(1, 'Acer Aspire 3 ', 'Laptop', 2),
+(2, 'Samsung A34 ', 'Smartphone', 1),
+(3, 'LG UHD UN72 ', 'TV', 5),
+(4, 'Cosmos 16-XDC ', 'Kipas Angin', 7);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `printer`
+-- Indexes for table `barang`
 --
-ALTER TABLE `printer`
+ALTER TABLE `barang`
   ADD PRIMARY KEY (`no`);
 
 --
@@ -58,10 +59,10 @@ ALTER TABLE `printer`
 --
 
 --
--- AUTO_INCREMENT for table `printer`
+-- AUTO_INCREMENT for table `barang`
 --
-ALTER TABLE `printer`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `barang`
+  MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
